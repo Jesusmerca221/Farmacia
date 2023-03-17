@@ -2,11 +2,19 @@
 
 @section('contenido')
 <!-- <div class="shadow-lg p-3 mb-5 bg-white rounded"><h3>Contenido de INDEX</h3></div> -->
-<a href="productos/create" class="btn btn-primary">CREAR</a>
+<style>
+.row {
+  size: 2px;
+}
 
 
-<table class="table table-dark table-striped mt-4">
-  <thead>
+</style>
+
+<div class="row">
+  <div class="col-md-8">
+    <table class="table">
+      <!-- Contenido de la tabla -->
+      <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Código</th>
@@ -35,7 +43,16 @@
     </tr>
     @endforeach
   </tbody>
-</table>
+    </table>
+    @endsection
+  </div>
+  <div class="col-md-4">
+  <div class="row">
+  <a href="dashboard" class="btn btn-primary btn-custom">Inicio</a>
+  <a href="productos/create" class="btn btn-secondary btn-custom">Crear</a>
 
-@endsection
+
+  </div>
+</div>
+
 

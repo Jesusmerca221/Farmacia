@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -12,8 +12,29 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    
+                    <img src="/img/Logo.png" style="width: 180px; height: 180px">
+                    
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Inicio') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('productos.index') }}" :active="request()->routeIs('productos')">
+                        {{ __('Productos') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('ventas.index') }}" :active="request()->routeIs('ventas')">
+                        {{ __('Venta') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('productos.index') }}" :active="request()->routeIs('productos')">
+                        {{ __('Inventarios') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('productos.index') }}" :active="request()->routeIs('productos')">
+                        {{ __('Compra') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('productos.index') }}" :active="request()->routeIs('productos')">
+                        {{ __('Proveedores') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('productos.index') }}" :active="request()->routeIs('productos')">
+                        {{ __('Usuarios') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -93,11 +114,11 @@
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{ __('Cuenta') }}
                             </div>
 
                             <x-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{ __('Perfil') }}
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -114,7 +135,7 @@
 
                                 <x-dropdown-link href="{{ route('logout') }}"
                                          @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Salir') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
@@ -160,7 +181,7 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Perfil') }}
                 </x-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -175,7 +196,7 @@
 
                     <x-responsive-nav-link href="{{ route('logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Salir') }}
                     </x-responsive-nav-link>
                 </form>
 

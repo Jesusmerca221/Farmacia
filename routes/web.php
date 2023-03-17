@@ -12,12 +12,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
+
 Route::resource('productos','App\Http\Controllers\ProductoController' );
+Route::resource('ventas','App\Http\Controllers\VentaController' );
 
 Route::middleware([
     'auth:sanctum',
@@ -27,4 +28,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('dashboard/productos', function () {
+        return view('dashboard/producto');
+    })->name('productos');
+    Route::get('dashboard/ventas', function () {
+        return view('dashboard/venta');
+    })->name('ventas');
+   
+    
 });
